@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Input } from '@components/Input';
+import { AutoCounter } from '@components/AutoCounter';
 
 function App(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -14,6 +15,7 @@ function App(): JSX.Element {
     <div className="App">
       <Input ref={inputRef} />
       <button onClick={onClick}>Click!</button>
+      <AutoCounter />
     </div>
   );
 }
