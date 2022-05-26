@@ -1,9 +1,10 @@
 import React from 'react';
+import LoginForm from '@components/LoginForm';
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1>Hello, World!</h1>
+      <LoginForm />
     </div>
   );
 }
