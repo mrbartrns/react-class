@@ -1,9 +1,14 @@
-import React from 'react';
+import { useState, useCallback } from 'react';
+import Box from '@components/Box';
 
 function App(): JSX.Element {
+  const [value, setValue] = useState(0);
+  const plus = useCallback(() => setValue((prev) => prev + 1), []);
   return (
     <div className="App">
-      <h1>Hello, World!</h1>
+      <button onClick={plus}>+</button>
+      <div>{value}</div>
+      <Box />
     </div>
   );
 }
