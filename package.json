@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "classnames": "^2.3.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
@@ -23,6 +25,7 @@
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime-corejs3": "^7.18.0",
+    "@emotion/babel-plugin": "^11.9.2",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
