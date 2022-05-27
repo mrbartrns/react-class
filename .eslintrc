@@ -8,9 +8,14 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "airbnb",
+        "react-app",
         "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
         "plugin:prettier/recommended"
     ],
+    "plugins": ["react-hooks"],
+    "rules": {      
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    },
     "parser": "@typescript-eslint/parser"
 }
