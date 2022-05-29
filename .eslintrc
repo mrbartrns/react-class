@@ -10,9 +10,9 @@
         "plugin:@typescript-eslint/recommended",
         "airbnb",
         "plugin:react/recommended",
-        "plugin:prettier/recommended",
         "plugin:react-hooks/recommended"
     ],
+    "plugins": ["prettier"],
     "rules": {
         "linebreak-style": "off",
         "react-hooks/rules-of-hooks": "error",
