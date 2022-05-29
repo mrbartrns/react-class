@@ -7,14 +7,16 @@ const useHover = <T extends Element = Element>(): ReturnTypes<T> => {
   const ref = useRef<T>(null);
   const onMouseEnter = useCallback(() => setIsHovered(() => true), []);
   const onMouseLeave = useCallback(() => setIsHovered(() => false), []);
+
   useEffect(() => {
+    const { current } = ref;
     ref.current?.addEventListener('mouseenter', onMouseEnter);
     ref.current?.addEventListener('mouseleave', onMouseLeave);
     return () => {
-      ref.current?.removeEventListener('mouseenter', onMouseEnter);
-      ref.current?.removeEventListener('mouseleave', onMouseLeave);
+      current?.removeEventListener('mouseenter', onMouseEnter);
+      current?.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, [ref]);
+  }, [onMouseEnter, onMouseLeave, ref]);
   return [isHovered, ref];
 };
 

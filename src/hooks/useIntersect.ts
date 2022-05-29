@@ -5,7 +5,7 @@ const useIntersect = <T extends Element = Element>(
     entry: IntersectionObserverEntry,
     observer: IntersectionObserver,
   ) => void,
-  threshold: number = 0,
+  threshold = 0,
 ): React.RefObject<T> => {
   const ref = useRef<T>(null);
   const checkIntersect: IntersectionObserverCallback = useCallback(
@@ -14,7 +14,7 @@ const useIntersect = <T extends Element = Element>(
         onIntersect(entry, observer);
       }
     },
-    [],
+    [onIntersect],
   );
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const useIntersect = <T extends Element = Element>(
       observer.observe(ref.current);
     }
     return () => observer?.disconnect();
-  }, [ref.current]);
+  }, [checkIntersect, threshold]);
 
   return ref;
 };

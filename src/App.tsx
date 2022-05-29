@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useState, useEffect } from 'react';
-import { css } from '@emotion/react';
+import React from 'react';
+
 import Box from '@components/Box';
 
 function App(): JSX.Element {
