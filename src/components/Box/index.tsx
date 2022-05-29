@@ -16,7 +16,7 @@ const Box = ({ ...props }: BoxProps): JSX.Element => {
     entry.target.dispatchEvent(new CustomEvent(LOADED));
   };
   const onLoaded = () => setLoaded(true);
-  const ref = useIntersect<HTMLDivElement>(onIntersect, 0.5);
+  const ref = useIntersect<HTMLDivElement>(onIntersect, 1);
   useEffect(() => {
     if (ref.current) {
       ref.current.addEventListener(LOADED, onLoaded);
@@ -31,7 +31,7 @@ const Box = ({ ...props }: BoxProps): JSX.Element => {
       style={{
         width: 100,
         height: 100,
-        backgroundColor: loaded ? 'royalblue' : 'rosybrown',
+        backgroundColor: loaded ? 'royalblue' : 'brown',
       }}
       {...props}
     />
