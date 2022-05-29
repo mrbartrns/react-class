@@ -6,16 +6,28 @@
     },
     "extends": [
         "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "airbnb",
-        "react-app",
         "plugin:react/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:react-hooks/recommended"
     ],
-    "plugins": ["react-hooks"],
-    "rules": {      
+    "rules": {
+        "linebreak-style": "off",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx"] }],
+        "import/no-unresolved": "off"
     },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "rules": {
+                "no-undef": "off",
+                "no-unused-vars": "off"
+            }
+        }
+    ],
     "parser": "@typescript-eslint/parser"
 }
