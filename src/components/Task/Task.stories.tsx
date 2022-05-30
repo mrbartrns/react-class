@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Task from '@components/Task';
+import { v4 } from 'uuid';
 
 export default {
   title: 'Component/Task',
@@ -12,5 +13,5 @@ export const Default: ComponentStory<typeof Task> = () => {
     content: '출근하기',
     completed: false,
   };
-  return <Task content={task.content} completed={task.completed} />;
+  return <Task id={v4()} content={task.content} completed={task.completed} />;
 };

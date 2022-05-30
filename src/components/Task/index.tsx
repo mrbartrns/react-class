@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Toggle from '@components/Toggle';
+import { useTasks } from '@/contexts/TaskProvider';
 
 interface TaskProps {
+  id: string;
   content: string;
   completed?: boolean;
 }
@@ -24,6 +26,8 @@ const Content = styled.span`
   flex: 1;
   margin-left: 8px;
   font-size: 14px;
+  text-decoration: ${({ completed }: { completed: boolean }) =>
+    completed ? 'line-through' : 'none'};
 `;
 
 const RemoveButton = styled.button`
@@ -38,15 +42,22 @@ const RemoveButton = styled.button`
 `;
 
 const Task = ({
+  id,
   content,
   completed = false,
   ...props
-}: TaskProps): JSX.Element => (
-  <ListItem {...props}>
-    <Toggle on={completed} />
-    <Content>{content}</Content>
-    <RemoveButton>Remove</RemoveButton>
-  </ListItem>
-);
+}: TaskProps): JSX.Element => {
+  const { removeTask, updateTask } = useTasks();
+  return (
+    <ListItem {...props}>
+      <Toggle
+        on={completed}
+        onChange={(e) => updateTask(id, e.target.checked)}
+      />
+      <Content completed={completed}>{content}</Content>
+      <RemoveButton onClick={() => removeTask(id)}>Remove</RemoveButton>
+    </ListItem>
+  );
+};
 
 export default Task;
