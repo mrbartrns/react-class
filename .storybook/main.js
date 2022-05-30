@@ -16,6 +16,7 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
       // TODO: TEST
       '@components': path.resolve(__dirname, '../src/components'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
     };
     config.resolve.alias = {
       ...config.resolve.alias,

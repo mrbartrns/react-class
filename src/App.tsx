@@ -1,8 +1,9 @@
 import React from 'react';
+import Toggle from '@components/Toggle';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <h1>Hello, World!</h1>
+    <Toggle />
   </div>
 );
 
