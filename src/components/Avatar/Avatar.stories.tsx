@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Avatar from '@components/Avatar';
+import AvatarGroup from '@components/Avatar/AvatarGroup';
 
 export default {
   title: 'Component/Avatar',
@@ -26,3 +27,14 @@ export default {
 export const Default: ComponentStory<typeof Avatar> = (args) => (
   <Avatar {...args} />
 );
+
+export const Group: ComponentStory<typeof AvatarGroup> = (args) => {
+  return (
+    <AvatarGroup {...args}>
+      <Avatar src="https://picsum.photos/200?1" alt="img" />
+      <Avatar src="https://picsum.photos/200?3" alt="img" />
+      <Avatar src="https://picsum.photos/200?3" alt="img" />
+      <Avatar src="https://picsum.photos/200?4" alt="img" />
+    </AvatarGroup>
+  );
+};
