@@ -24,8 +24,10 @@
       "paths": {
         "@/*": ["src/*"],
         "@components/*": ["src/components/*"],
-        "@hooks/*": ["src/hooks/*"]
+        "@hooks/*": ["src/hooks/*"],
+        "@contexts/*": ["src/contexts/*"]
       },
+      "types": ["@emotion/react/types/css-prop"]
     },
 
     "include": [
