@@ -20,12 +20,13 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx"] }],
         "import/no-unresolved": "off",
         "react/function-component-definition": [
-            2,
+            "error",
             {
                 "namedComponents": "arrow-function",
                 "unnamedComponents": "arrow-function"
             }
-        ]
+        ],
+        "react/jsx-props-no-spreading": "off"
     },
     "overrides": [
         {
