@@ -1,9 +1,16 @@
 import React from 'react';
-import Toggle from '@components/Toggle';
+import { css } from '@emotion/react';
+import TaskForm from '@components/TaskForm';
+import TaskList from '@components/TaskList';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <Toggle />
+    <TaskForm />
+    <TaskList
+      css={css`
+        margin-top: 1rem;
+      `}
+    />
   </div>
 );
 

@@ -16,8 +16,8 @@ const UnorderedList = styled.ul`
   }
 `;
 
-const TaskList: React.FC = () => (
-  <UnorderedList>
+const TaskList: React.FC = ({ ...props }) => (
+  <UnorderedList {...props}>
     <Task content="test" />
     <Task content="test" />
     <Task content="test" />
