@@ -7,6 +7,10 @@ export default {
   component: Task,
 } as ComponentMeta<typeof Task>;
 
-export const Default: ComponentStory<typeof Task> = (args) => (
-  <Task {...args} />
-);
+export const Default: ComponentStory<typeof Task> = () => {
+  const task = {
+    content: '출근하기',
+    completed: false,
+  };
+  return <Task content={task.content} completed={task.completed} />;
+};

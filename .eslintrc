@@ -26,7 +26,11 @@
                 "unnamedComponents": "arrow-function"
             }
         ],
-        "react/jsx-props-no-spreading": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
+        "import/extensions": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     },
     "overrides": [
         {
