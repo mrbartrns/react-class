@@ -21,3 +21,24 @@ export const AccessFile: ComponentStory<typeof Upload> = (args) => {
     </Upload>
   );
 };
+
+export const Droppable: ComponentStory<typeof Upload> = (args) => {
+  return (
+    <Upload droppable {...args}>
+      {(file?: File, dragging?: boolean) => {
+        return (
+          <div
+            style={{
+              width: 300,
+              height: 300,
+              border: `4px dashed #aaa`,
+              borderColor: dragging ? 'black' : '#aaa',
+            }}
+          >
+            {file ? file.name : 'Click or drag file to this area to upload'}
+          </div>
+        );
+      }}
+    </Upload>
+  );
+};
