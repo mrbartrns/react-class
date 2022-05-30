@@ -14,7 +14,6 @@ module.exports = {
   webpackFinal: async (config) => {
     const alias = {
       '@': path.resolve(__dirname, '../src'),
-      // TODO: TEST
       '@components': path.resolve(__dirname, '../src/components'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
       '@contexts': path.resolve(__dirname, '../src/contexts'),
