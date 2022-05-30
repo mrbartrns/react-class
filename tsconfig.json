@@ -27,6 +27,7 @@
         "@hooks/*": ["src/hooks/*"],
         "@contexts/*": ["src/contexts/*"]
       },
+      "types": ["@emotion/react/types/css-prop"]
     },
 
     "include": [
