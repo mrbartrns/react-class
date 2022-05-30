@@ -17,6 +17,7 @@ module.exports = {
       // TODO: TEST
       '@components': path.resolve(__dirname, '../src/components'),
       '@hooks': path.resolve(__dirname, '../src/hooks'),
+      '@contexts': path.resolve(__dirname, '../src/contexts'),
     };
     config.resolve.alias = {
       ...config.resolve.alias,
