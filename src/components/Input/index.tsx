@@ -44,7 +44,6 @@ const Input: React.FC<InputProps> = ({
   disabled = false,
   readOnly = false,
   wrapperProps,
-  style,
   ...props
 }) => {
   return (
