@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import useScroll from '@hooks/useScroll';
 
 export default {
-  title: 'Hook/useScroll',
+  title: 'Hooks/useScroll',
 };
 
 const Box = styled.div`
