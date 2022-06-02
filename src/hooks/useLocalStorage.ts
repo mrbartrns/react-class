@@ -2,15 +2,19 @@ import { useCallback, useState } from 'react';
 
 type ReturnTypes<T> = [T, (value: T) => void];
 
-const useLocalStorage = <T>(key: string, initialValue: T): ReturnTypes<T> => {
+// ANCHOR: localStorage와 sessionStorage api 사용법이 같으므로, 이름만 바꿔주면 된다.
+const useLocalStorage = <T = unknown>(
+  key: string,
+  defaultValue: T,
+): ReturnTypes<T> => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      const value = localStorage.getItem(key);
+      return value ? (JSON.parse(value) as unknown as T) : defaultValue;
     } catch (e: unknown) {
       // eslint-disable-next-line no-console
       console.error(e);
-      return initialValue;
+      return defaultValue;
     }
   });
 
