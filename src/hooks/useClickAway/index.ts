@@ -4,7 +4,7 @@ import { useRef, useCallback, useEffect } from 'react';
 const events = ['mousedown', 'touchstart'] as const;
 
 const useClickAway = <T extends Element>(
-  handler: (e?: MouseEvent | TouchEvent) => void,
+  handler: (e: MouseEvent | TouchEvent) => void,
 ) => {
   const ref = useRef<T>(null);
   const onClick = useCallback(
