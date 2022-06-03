@@ -1,5 +1,5 @@
 import React from 'react';
-import useHotKey from '.';
+import useHotKey from '@/hooks/useHotkey';
 
 export default {
   title: 'Hooks/useHotKey',
@@ -13,7 +13,6 @@ export const Default = () => {
       onKeyDown: () => {
         alert('esc');
       },
-      onKeyUp: () => {},
     },
   ];
   const { handleKeyDown } = useHotKey(hotkeys);
