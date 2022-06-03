@@ -13,7 +13,9 @@ const asyncReturnValue = () => {
 };
 
 export const Success = () => {
-  const [state, cb] = useAsyncFn(async () => asyncReturnValue, []);
+  // ANCHOR: () => asyncReturnValue가 아닌 asyncReturnValue를 넘겨주었더니 되었다.
+  const [state, cb] = useAsyncFn(asyncReturnValue, [asyncReturnValue]);
+
   return (
     <div>
       <div>useAsync Text</div>
