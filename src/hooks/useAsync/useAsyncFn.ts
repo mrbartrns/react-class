@@ -19,7 +19,6 @@ const useAsyncFn = <T = unknown>(
     setState((prev) => ({ ...prev, isLoading: true }));
     return fn(...args)
       .then((data) => {
-        console.log(data);
         setState((prev) => ({ ...prev, data }));
       })
       .catch((error: Error) => {
