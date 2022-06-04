@@ -1,14 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import ToastManager from './ToastManager';
 
-// interface ToastProps {}
-
-// const Toast: React.FC<ToastProps> = ({}) => {
-//   return <div />;
-// };
-
-// export default Toast;
-
 class Toast {
   portal: null | HTMLElement = null;
 
