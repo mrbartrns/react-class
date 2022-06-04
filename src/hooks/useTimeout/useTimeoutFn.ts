@@ -6,12 +6,15 @@ import { useCallback, useEffect, useRef } from 'react';
 const useTimeoutFn = (cb: () => void, ms = 0): [() => void, () => void] => {
   const timeoutId = useRef<null | ReturnType<typeof setTimeout>>(null);
   // debounce에서 작동 X
-  // const fn = useRef(cb);
+  // TOAST에서 사용하려면 useRef로 callback 함수를 감싸줘야 함 이유는?
+  const fn = useRef(cb);
   // callbackFn도 ref에 저장해야 하는 이유?
   const run = useCallback(() => {
     if (timeoutId.current) clearTimeout(timeoutId.current);
-    timeoutId.current = setTimeout(cb, ms);
-  }, [cb, ms]);
+    timeoutId.current = setTimeout(() => {
+      fn.current();
+    }, ms);
+  }, [ms]);
   const clear = useCallback(() => {
     if (timeoutId.current) clearTimeout(timeoutId.current);
   }, []);
