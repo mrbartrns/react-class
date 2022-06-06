@@ -1,8 +1,9 @@
 import React from 'react';
+import Paint from '@components/Paint';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <h1>Hello, World!</h1>
+    <Paint style={{ border: '1px solid black' }} />
   </div>
 );
 
