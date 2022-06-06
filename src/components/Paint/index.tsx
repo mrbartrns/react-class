@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react';
-import PenPlugin from './plugins/pen';
 import Plugin from './plugins/plugin';
 
 /**
@@ -16,7 +15,7 @@ interface PaintProps {
   height?: number;
   style?: { [key: string]: unknown };
   className?: string;
-  plugins?: Plugin[];
+  plugins: Plugin[];
 }
 
 // ANCHOR: canvas 맨 왼쪽 꼭지점이 0, 0이 될 수 있도록 좌표를 구한다
@@ -37,7 +36,7 @@ const Paint: React.FC<PaintProps> = ({
   height = 600,
   style,
   className,
-  plugins = [new PenPlugin()],
+  plugins,
   ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -64,15 +63,13 @@ const Paint: React.FC<PaintProps> = ({
 
   useEffect(() => {
     plugins.forEach((plugin) => {
-      plugin.canvas = canvasRef.current;
+      Object.assign(plugin, { canvas: canvasRef.current });
     });
 
     setCurrentPlugins(
       Object.assign(
         {},
-        ...plugins.map((plugin) => ({
-          [plugin.name]: plugin,
-        })),
+        ...plugins.map((plugin) => ({ [plugin.name]: plugin })),
       ),
     );
   }, [plugins]);
