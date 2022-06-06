@@ -1,8 +1,10 @@
 import React from 'react';
+import Paint from '@components/Paint';
+import PenPlugin from '@components/Paint/plugins/pen';
 
 const App = (): JSX.Element => (
   <div className="App">
-    <h1>Hello, World!</h1>
+    <Paint style={{ border: '1px solid black' }} plugins={[new PenPlugin()]} />
   </div>
 );
 
