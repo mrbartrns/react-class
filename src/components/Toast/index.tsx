@@ -20,7 +20,7 @@ class Toast {
     document.body.appendChild(this.portal);
     const element = ReactDOM.createRoot(this.portal);
     element.render(
-      // TODO: add postmanager to this.portal
+      // TODO: add postmanager to this.porta
       <ToastManager
         bind={(createToast) => {
           this.createToast = createToast;
